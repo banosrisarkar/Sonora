@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11121a">
+<title>Sonora — Music & Playlist Studio</title>
+<meta name="description" content="Personal music library and playlist studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+  <div class="brand"><span class="brand-mark">S</span><span>sonora</span></div>
+  <button class="mobile-close" id="closeSidebar">×</button>
+  <nav>
+    <button class="nav-item active" data-view="home">⌂ <span>Home</span></button>
+    <button class="nav-item" data-view="library">♫ <span>Your Library</span></button>
+    <button class="nav-item" data-view="playlists">▦ <span>Playlists</span></button>
+    <button class="nav-item" data-view="favorites">♡ <span>Favorites</span></button>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="ghost-btn" id="newPlaylistBtn">＋ New playlist</button>
+    <p class="mini-note">Your music, your mood, your world.</p>
+  </div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <button class="menu-btn" id="openSidebar">☰</button>
+  <div class="search-wrap"><span>⌕</span><input id="searchInput" placeholder="Search songs, artists, playlists..."></div>
+  <div class="top-actions"><button class="icon-btn" id="themeBtn">☾</button><button class="profile-pill">Guest</button></div>
+</header>
+<section id="view"></section>
+</main>
+</div>
+
+<footer class="player">
+  <div class="now-playing">
+    <div class="cover small" id="playerCover">♪</div>
+    <div class="np-copy"><strong id="playerTitle">Nothing playing</strong><span id="playerArtist">Add a song to begin</span></div>
+    <button class="heart-btn" id="playerFavorite">♡</button>
+  </div>
+  <div class="player-center">
+    <div class="transport">
+      <button id="shuffleBtn">⤨</button><button id="prevBtn">◀◀</button>
+      <button class="play-btn" id="playBtn">▶</button><button id="nextBtn">▶▶</button><button id="repeatBtn">↻</button>
+    </div>
+    <div class="progress-row"><span id="currentTime">0:00</span><input id="progress" type="range" min="0" max="100" value="0"><span id="duration">0:00</span></div>
+  </div>
+  <div class="volume"><span>🔊</span><input id="volume" type="range" min="0" max="1" step=".01" value=".8"></div>
+</footer>
+
+<input id="audioInput" type="file" accept="audio/*" multiple hidden>
+<audio id="audio"></audio>
+<div id="modalRoot"></div>
+<script src="app.js"></script>
+</body>
+</html>

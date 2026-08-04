@@ -1,0 +1,23 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# dependencies/build
+node_modules/
+dist/
+build/
+
+# Do not commit personal/local music
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.aac
+*.flac
+*.webm
